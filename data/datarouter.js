@@ -96,7 +96,7 @@ router.put('/:id', (req, res) => {
   const changes = req.body;
   posts.update(req.params.id, changes)
   .then(post => {
-
+    res.status(201).json(req.body);
   })
   .catch(error => {
     console.log(error);
